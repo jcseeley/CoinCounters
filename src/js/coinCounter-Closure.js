@@ -3,9 +3,9 @@ export default function coinCounterClosure(coins = {}) {
     return (dimes) => {
       return (nickels) => {
         return (pennies) => {
-            if (quarters != undefined && isNaN(quarters) || dimes != undefined && isNaN(dimes) || nickels != undefined && isNaN(nickels) || pennies != undefined && isNaN(pennies) || quarters < 0 || dimes < 0 || nickels < 0 || pennies < 0) {
-              return;
-            } if (quarters >= .25) {
+          if (quarters != undefined && isNaN(quarters) || dimes != undefined && isNaN(dimes) || nickels != undefined && isNaN(nickels) || pennies != undefined && isNaN(pennies) || quarters < 0 || dimes < 0 || nickels < 0 || pennies < 0) {
+            return;
+          } if (quarters >= .25) {
             coins.quarters = Math.floor(quarters/.25);
             return coinCounterClosure(coins)()(parseFloat((quarters - (Math.floor(quarters/.25) * .25)).toFixed(2)))(parseFloat((quarters - (Math.floor(quarters/.25) * .25)).toFixed(2)))(parseFloat((quarters - (Math.floor(quarters/.25) * .25)).toFixed(2)));
           } else if (dimes >= .1) {
